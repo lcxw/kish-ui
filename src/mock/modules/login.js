@@ -42,7 +42,8 @@ export function logout() {
 }
 
 export function captcha() {
-  const captcha_code = Mock.Random.string(4);
+  // const captcha_code = Mock.Random.string(4);
+  const captcha_code = Mock.mock({ regexp: /\w{4}/ }).regexp;
   console.log(captcha_code);
   const logoutData = {
     code: 200,
@@ -54,12 +55,14 @@ export function captcha() {
       // img: Mock.Random.dataImage("200x100", captcha),
       captcha_code: captcha_code,
       // img: Mock.Random.image("143x38", "#894FC4", "#FFF", "png", captcha_code)
+      // img: Mock.Random.image("143x38", captcha_code)
+      // img: Mock.Random.dataImage("143x38", captcha_code)
       img: Mock.Random.dataImage("143x38", captcha_code)
     }
   };
   return {
     // url: RegExp("captcha.jpg"),
-    url: "captcha.jpg",
+    url: "captcha",
     type: "get",
     data: logoutData
   };

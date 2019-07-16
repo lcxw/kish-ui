@@ -63,15 +63,15 @@
     <!-- <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox> -->
     <el-form-item style="width:100%;">
       <el-button type="primary" style="width:48%;" @click.native.prevent="reset"
-        >重 置</el-button
-      >
+        >重 置
+      </el-button>
       <el-button
         type="primary"
         style="width:48%;"
         @click.native.prevent="login"
         :loading="loading"
-        >登 录</el-button
-      >
+        >登 录
+      </el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -143,9 +143,16 @@ export default {
       // this.loginForm.src =
       //   this.global.baseUrl + "/captcha.jpg?t=" + new Date().getTime();
       let that = this;
+      new Promise((resolve, reject) => {})
+        .then(value => {
+          console.log(value);
+        })
+        .catch(error => {
+          console.log(error);
+        });
       axios
         // .get(that.global.baseUrl + "/captchajpg?t=" + new Date().getTime())
-        .get(that.global.baseUrl + "/captcha.jpg?t=" + new Date().getTime())
+        .get(that.global.baseUrl + "/captcha?t=" + new Date().getTime())
         .then(res => {
           console.log(res);
           console.log(res.config.url);
@@ -191,11 +198,13 @@ export default {
   background: #fff;
   border: 1px solid #eaeaea;
   box-shadow: 0 0 25px #cac6c6;
+
   .title {
     margin: 0px auto 30px auto;
     text-align: center;
     color: #505458;
   }
+
   .remember {
     margin: 0px 0px 35px 0px;
   }
