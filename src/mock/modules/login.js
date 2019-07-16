@@ -42,19 +42,25 @@ export function logout() {
 }
 
 export function captcha() {
+  const captcha_code = Mock.Random.string(4);
+  console.log(captcha_code);
   const logoutData = {
     code: 200,
     msg: null,
-    data: {}
+    data: {
+      // captcha: Mock.Random.string("abcdefghijklmnopqrstuvwxyz", 4, 7),
+      // captcha: Mock.mock("@cname"),
+      // captcha_code: Mock.Random.string(4),
+      // img: Mock.Random.dataImage("200x100", captcha),
+      captcha_code: captcha_code,
+      // img: Mock.Random.image("143x38", "#894FC4", "#FFF", "png", captcha_code)
+      img: Mock.Random.dataImage("143x38", captcha_code)
+    }
   };
   return {
-    url: "captcha",
+    // url: RegExp("captcha.jpg"),
+    url: "captcha.jpg",
     type: "get",
-    data: logoutData,
-    "ListInfo|5": [
-      {
-        img: Mock.Random.image("200x100")
-      }
-    ]
+    data: logoutData
   };
 }

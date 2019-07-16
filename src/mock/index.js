@@ -1,8 +1,13 @@
 import Mock from "mockjs";
-
-const baseUrl = "http://localhost:8001";
+import { baseUrl } from "@/utils/global";
+import * as login from "./modules/login";
+// const baseUrl = "http://localhost:8001";
 const openMock = true;
-
+// 设置接口返回时间,在100-1500毫秒中随机
+Mock.setup({
+  timeout: "100-1500"
+});
+fnCreate(login, openMock);
 /**
  * 创建mock模拟数据
  * @param {*} mod 模块
@@ -45,6 +50,16 @@ Mock.mock("http://www.test.com", {
   ]
 });
 Mock.mock("http://www.test.com/img", {
+  // 先获取一个随机时间的毫秒数，再去掉毫秒
+  // timestamp: Mock.Random.Data('T')/1000,
+  // "ListInfo|1": [
+  //   {
+  // img: Mock.Random.image("200x100", "#ffcc33", "#FFF", "png", Mock.Random.string())
+  img: Mock.Random.dataImage("200x100", Mock.Random.string())
+  // }
+  // ]
+});
+Mock.mock("http://kitty:8001/captcha.jpg", {
   // "ListInfo|1": [
   //   {
   // img: Mock.Random.image("200x100", "#ffcc33", "#FFF", "png", Mock.Random.string())
