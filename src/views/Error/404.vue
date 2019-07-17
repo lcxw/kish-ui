@@ -20,7 +20,7 @@
 export default {};
 </script>
 
-<style lang="scss">
+<style lang="less">
 .site-wrapper.site-page--not-found {
   position: absolute;
   top: 60px;

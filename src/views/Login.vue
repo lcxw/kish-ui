@@ -157,6 +157,7 @@ export default {
           console.log(res);
           console.log(res.config.url);
           console.log(res.data.data.captcha_code);
+
           // console.log(res.data.data.img);
           that.loginForm.src = res.data.data.img;
         })

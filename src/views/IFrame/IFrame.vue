@@ -55,7 +55,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="less">
 .iframe-container {
   position: absolute;
   top: 0px;
