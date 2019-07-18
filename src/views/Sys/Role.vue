@@ -144,13 +144,13 @@
 <script>
 import KtTable from "@/views/Core/KtTable";
 import KtButton from "@/views/Core/KtButton";
-import TableTreeColumn from "@/views/Core/TableTreeColumn";
+// import TableTreeColumn from "@/views/Core/TableTreeColumn";
 import { format } from "@/utils/datetime";
 export default {
   components: {
     KtTable,
-    KtButton,
-    TableTreeColumn
+    KtButton
+    // TableTreeColumn
   },
   data() {
     return {

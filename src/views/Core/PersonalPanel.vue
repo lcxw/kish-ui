@@ -60,6 +60,7 @@
 <script>
 import Cookies from "js-cookie";
 import Backup from "@/views/Backup/Backup";
+
 export default {
   name: "PersonalPanel",
   components: {
@@ -68,11 +69,13 @@ export default {
   props: {
     user: {
       type: Object,
-      default: {
-        name: "admin",
-        avatar: "@/assets/user.png",
-        role: "超级管理员",
-        registeInfo: "注册时间：2018-12-25 "
+      default() {
+        return {
+          name: "admin",
+          avatar: "@/assets/user.png",
+          role: "超级管理员",
+          registeInfo: "注册时间：2018-12-25 "
+        };
       }
     }
   },
@@ -131,32 +134,39 @@ export default {
   background: rgba(182, 172, 172, 0.1);
   margin: -14px;
 }
+
 .personal-desc {
   padding: 15px;
   color: #fff;
 }
+
 .avatar {
   width: 80px;
   height: 80px;
   border-radius: 90px;
 }
+
 .name-role {
   font-size: 16px;
   padding: 5px;
 }
+
 .personal-relation {
   font-size: 16px;
   padding: 12px;
   margin-right: 1px;
   background: rgba(200, 209, 204, 0.3);
 }
+
 .relation-item {
   padding: 12px;
 }
+
 .relation-item:hover {
   cursor: pointer;
   color: rgb(19, 138, 156);
 }
+
 .main-operation {
   padding: 8px;
   margin-right: 1px;
@@ -165,9 +175,11 @@ export default {
   border-top-width: 1px;
   border-top-style: solid;
 }
+
 .main-operation-item {
   margin: 15px;
 }
+
 .other-operation {
   padding: 15px;
   margin-right: 1px;
@@ -176,14 +188,17 @@ export default {
   border-top-width: 1px;
   border-top-style: solid;
 }
+
 .other-operation-item {
   padding: 12px;
 }
+
 .other-operation-item:hover {
   cursor: pointer;
   background: #9e94941e;
   color: rgb(19, 138, 156);
 }
+
 .personal-footer {
   margin-right: 1px;
   font-size: 14px;
@@ -194,6 +209,7 @@ export default {
   border-top-width: 1px;
   border-top-style: solid;
 }
+
 .personal-footer:hover {
   cursor: pointer;
   color: rgb(19, 138, 156);

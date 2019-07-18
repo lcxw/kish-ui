@@ -166,14 +166,14 @@
 import KtButton from "@/views/Core/KtButton";
 import TableTreeColumn from "@/views/Core/TableTreeColumn";
 import PopupTreeInput from "@/components/PopupTreeInput";
-import FaIconTooltip from "@/components/FaIconTooltip";
+// import FaIconTooltip from "@/components/FaIconTooltip";
 import { format } from "@/utils/datetime";
 export default {
   components: {
     PopupTreeInput,
     KtButton,
-    TableTreeColumn,
-    FaIconTooltip
+    TableTreeColumn
+    // FaIconTooltip
   },
   data() {
     return {

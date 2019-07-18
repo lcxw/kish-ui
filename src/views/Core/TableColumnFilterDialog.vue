@@ -17,7 +17,7 @@
       style="width: 100%"
       @selection-change="selectionChange"
     >
-      <el-table-column type="selection" width="40"> </el-table-column>
+      <el-table-column type="selection" width="40"></el-table-column>
       <el-table-column label="属性">
         <template slot-scope="scope">{{ scope.row.prop }}</template>
       </el-table-column>
@@ -33,15 +33,12 @@
       </el-table-column>
     </el-table>
     <div slot="footer" class="dialog-footer">
-      <el-button :size="size" @click.native="dialogVisible = false">{{
-        $t("action.cancel")
-      }}</el-button>
-      <el-button
-        :size="size"
-        type="primary"
-        @click.native="handleFilterColumns"
-        >{{ $t("action.comfirm") }}</el-button
-      >
+      <el-button :size="size" @click.native="dialogVisible = false"
+        >{{ $t("action.cancel") }}
+      </el-button>
+      <el-button :size="size" type="primary" @click.native="handleFilterColumns"
+        >{{ $t("action.comfirm") }}
+      </el-button>
     </div>
   </el-dialog>
 </template>
@@ -53,7 +50,7 @@ export default {
   props: {
     columns: {
       type: Array,
-      default: []
+      default: () => []
     },
     size: {
       type: String,
