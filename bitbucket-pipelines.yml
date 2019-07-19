@@ -13,8 +13,8 @@ pipelines:
         script: # Modify the commands below to build your repository.
           - yarn install
           - yarn build
-          - yarn lint
-          - yarn test
+          # - yarn lint
+          - yarn test:unit
     - step:
         name: Deploy to test
         deployment: test
