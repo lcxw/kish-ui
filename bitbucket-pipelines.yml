@@ -1,0 +1,38 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:10.15.3
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script: # Modify the commands below to build your repository.
+          - yarn install
+          - yarn build
+          - yarn lint
+          - yarn test
+    - step:
+        name: Deploy to test
+        deployment: test
+        # trigger: manual  # Uncomment to make this a manual deployment.
+        script:
+          - echo "Deploying to test environment"
+    - step:
+        name: Manual step
+        trigger: manual
+        script:
+          - echo "This step runs once you click the 'Run' button"
+    - parallel:
+      - step:
+          name: Test group 1
+          script:
+            - echo "Running test group 1"
+      - step:
+          name: Test group 2
+          script:
+            - echo "Running test group 2"
+
