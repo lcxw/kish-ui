@@ -38,12 +38,8 @@ export function backup_Folder(backupFodlerName) {
   const fileName = "kitty.sql";
   doBackup(host, username, password, database, backupFolderPath, fileName);
   return new Promise(() => {
-    cmd = spawn("dir", ["."]);
-    cmd.stdout.on("data", data => console.log(`stdout: ${data}`));
-    cmd.stderr.on("data", data => console.log(`stderr: ${data}`));
-    cmd.on("close", code =>
-      console.log(`child process exited with code ${code}`)
-    );
+    console.log(`child process exited with code `);
+    return "s";
   })
     .then(res => {})
     .catch(err => {});
