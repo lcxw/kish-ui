@@ -1,5 +1,7 @@
 # kish-ui
-
+[![CircleCI](https://circleci.com/gh/lcxw/kish-ui/tree/master.svg?style=svg)](https://circleci.com/gh/lcxw/kish-ui/tree/master)
+[![codecov](https://codecov.io/gh/lcxw/kish-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/lcxw/kish-ui)
+[![CircleCI](https://circleci.com/bb/kishw/kish-ui/tree/master.svg?style=svg)](https://circleci.com/bb/kishw/kish-ui/tree/master)
 ## Project setup
 ```
 yarn install
