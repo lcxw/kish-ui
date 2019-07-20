@@ -5,9 +5,9 @@
 [![CircleCI](https://img.shields.io/github/issues/lcxw/kish-ui.svg)](https://github.com/lcxw/kish-ui)
 [![CircleCI](https://img.shields.io/github/forks/lcxw/kish-ui.svg)](https://github.com/lcxw/kish-ui)
 [![CircleCI](https://img.shields.io/github/stars/lcxw/kish-ui.svg)](https://github.com/lcxw/kish-ui)
-[![CircleCI](https://img.shields.io/github/license/lcxw/kish-ui.svg)](https://github.com/lcxw/kish-ui)
-[![CircleCI](https://img.shields.io/twitter/url/https/github.com%2Flcxw%2Fkish-ui.svg)](https://github.com/lcxw/kish-ui)
+[![GitHub license](https://img.shields.io/github/license/lcxw/kish-ui.svg)](https://github.com/lcxw/kish-ui)
 
+[![CircleCI](https://img.shields.io/twitter/url/https/github.com%2Flcxw%2Fkish-ui.svg)](https://github.com/lcxw/kish-ui)
 
 
 		
