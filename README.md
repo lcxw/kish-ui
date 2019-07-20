@@ -2,6 +2,16 @@
 [![CircleCI](https://circleci.com/gh/lcxw/kish-ui/tree/master.svg?style=svg)](https://circleci.com/gh/lcxw/kish-ui/tree/master)
 [![codecov](https://codecov.io/gh/lcxw/kish-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/lcxw/kish-ui)
 [![CircleCI](https://circleci.com/bb/kishw/kish-ui/tree/master.svg?style=svg)](https://circleci.com/bb/kishw/kish-ui/tree/master)
+[![CircleCI](https://img.shields.io/github/issues/lcxw/kish-ui.svg)](https://github.com/lcxw/kish-ui)
+[![CircleCI](https://img.shields.io/github/forks/lcxw/kish-ui.svg)](https://github.com/lcxw/kish-ui)
+[![CircleCI](https://img.shields.io/github/stars/lcxw/kish-ui.svg)](https://github.com/lcxw/kish-ui)
+[![CircleCI](https://img.shields.io/github/license/lcxw/kish-ui.svg)](https://github.com/lcxw/kish-ui)
+[![CircleCI](https://img.shields.io/twitter/url/https/github.com%2Flcxw%2Fkish-ui.svg)](https://github.com/lcxw/kish-ui)
+
+
+
+		
+		
 ## Project setup
 ```
 yarn install
