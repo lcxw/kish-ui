@@ -1,10 +1,7 @@
 <template>
   <el-table-column :prop="prop" v-bind="$attrs">
     <template slot-scope="scope">
-      <span
-        @click.prevent="toggleHandle(scope.$index, scope.row)"
-        :style="childStyles(scope.row)"
-      >
+      <span @click.prevent="toggleHandle(scope.$index, scope.row)" :style="childStyles(scope.row)">
         <i :class="iconClasses(scope.row)" :style="iconStyles(scope.row)"></i>
         {{ scope.row[prop] }}
       </span>
@@ -48,9 +45,7 @@ export default {
       return { visibility: this.hasChild(row) ? "visible" : "hidden" };
     },
     hasChild(row) {
-      return (
-        (isArray(row[this.childKey]) && row[this.childKey].length >= 1) || false
-      );
+      return (isArray(row[this.childKey]) && row[this.childKey].length >= 1) || false;
     },
     // 切换处理
     toggleHandle(index, row) {

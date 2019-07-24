@@ -23,18 +23,11 @@
         align="center"
       >
       </el-table-column>
-      <el-table-column
-        fixed="right"
-        :label="$t('action.operation')"
-        width="180"
-      >
+      <el-table-column fixed="right" :label="$t('action.operation')" width="180">
         <template slot-scope="scope">
-          <el-button
-            @click="handleRestore(scope.row)"
-            type="primary"
-            size="mini"
-            >{{ $t("common.restore") }}</el-button
-          >
+          <el-button @click="handleRestore(scope.row)" type="primary" size="mini">{{
+            $t("common.restore")
+          }}</el-button>
           <el-button
             @click="handleDelete(scope.row)"
             type="danger"
@@ -46,9 +39,7 @@
       </el-table-column>
     </el-table>
     <span slot="footer" class="dialog-footer">
-      <el-button size="small" @click="backupVisible = false">{{
-        $t("action.cancel")
-      }}</el-button>
+      <el-button size="small" @click="backupVisible = false">{{ $t("action.cancel") }}</el-button>
       <el-button size="small" type="primary" @click="handleBackup">{{
         $t("common.backup")
       }}</el-button>
@@ -103,34 +94,30 @@ export default {
     // 数据还原
     handleRestore: function(data) {
       this.tableLoading = true;
-      axios
-        .get(this.baseUrl + "/backup/restore", { params: { name: data.name } })
-        .then(res => {
-          res = res.data;
-          if (res.code == 200) {
-            this.$message({ message: "操作成功", type: "success" });
-            this.$emit("afterRestore", {});
-          } else {
-            this.$message({ message: "操作失败, " + res.msg, type: "error" });
-          }
-          this.tableLoading = false;
-        });
+      axios.get(this.baseUrl + "/backup/restore", { params: { name: data.name } }).then(res => {
+        res = res.data;
+        if (res.code == 200) {
+          this.$message({ message: "操作成功", type: "success" });
+          this.$emit("afterRestore", {});
+        } else {
+          this.$message({ message: "操作失败, " + res.msg, type: "error" });
+        }
+        this.tableLoading = false;
+      });
     },
     // 删除备份
     handleDelete: function(data) {
       this.tableLoading = true;
-      axios
-        .get(this.baseUrl + "/backup/delete", { params: { name: data.name } })
-        .then(res => {
-          res = res.data;
-          if (res.code == 200) {
-            this.$message({ message: "操作成功", type: "success" });
-          } else {
-            this.$message({ message: "操作失败, " + res.msg, type: "error" });
-          }
-          this.findRecords();
-          this.tableLoading = false;
-        });
+      axios.get(this.baseUrl + "/backup/delete", { params: { name: data.name } }).then(res => {
+        res = res.data;
+        if (res.code == 200) {
+          this.$message({ message: "操作成功", type: "success" });
+        } else {
+          this.$message({ message: "操作失败, " + res.msg, type: "error" });
+        }
+        this.findRecords();
+        this.tableLoading = false;
+      });
     }
   },
   mounted() {

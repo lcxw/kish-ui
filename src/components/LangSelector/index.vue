@@ -1,12 +1,7 @@
 <template>
   <div class="lang-selector" :style="istyle" v-popover:popover>
     <li :style="iconStyle" :class="icon"></li>
-    <el-popover
-      ref="popover"
-      placement="bottom-start"
-      :trigger="trigger"
-      v-model="visible"
-    >
+    <el-popover ref="popover" placement="bottom-start" :trigger="trigger" v-model="visible">
       <div class="item" @click="changeLanguage('zh_cn')">简体中文</div>
       <div class="item" @click="changeLanguage('en_us')">English</div>
     </el-popover>

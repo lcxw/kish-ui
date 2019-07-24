@@ -36,21 +36,9 @@
       v-loading="loading"
       element-loading-text="$t('action.loading')"
     >
-      <el-table-column
-        prop="id"
-        header-align="center"
-        align="center"
-        width="80"
-        label="ID"
-      >
+      <el-table-column prop="id" header-align="center" align="center" width="80" label="ID">
       </el-table-column>
-      <table-tree-column
-        prop="name"
-        header-align="center"
-        treeKey="id"
-        width="150"
-        label="名称"
-      >
+      <table-tree-column prop="name" header-align="center" treeKey="id" width="150" label="名称">
       </table-tree-column>
       <el-table-column
         prop="parentName"
@@ -60,19 +48,9 @@
         label="上级机构"
       >
       </el-table-column>
-      <el-table-column
-        prop="orderNum"
-        header-align="center"
-        align="center"
-        label="排序"
-      >
+      <el-table-column prop="orderNum" header-align="center" align="center" label="排序">
       </el-table-column>
-      <el-table-column
-        prop="createBy"
-        header-align="center"
-        align="center"
-        label="创建人"
-      >
+      <el-table-column prop="createBy" header-align="center" align="center" label="创建人">
       </el-table-column>
       <el-table-column
         prop="createTime"
@@ -129,19 +107,13 @@
           <popup-tree-input
             :data="popupTreeData"
             :props="popupTreeProps"
-            :prop="
-              dataForm.parentName == null ? '顶级菜单' : dataForm.parentName
-            "
+            :prop="dataForm.parentName == null ? '顶级菜单' : dataForm.parentName"
             :nodeKey="'' + dataForm.parentId"
             :currentChangeHandle="handleTreeSelectChange"
           >
           </popup-tree-input>
         </el-form-item>
-        <el-form-item
-          v-if="dataForm.type !== 2"
-          label="排序编号"
-          prop="orderNum"
-        >
+        <el-form-item v-if="dataForm.type !== 2" label="排序编号" prop="orderNum">
           <el-input-number
             v-model="dataForm.orderNum"
             controls-position="right"
@@ -151,9 +123,7 @@
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button :size="size" @click="dialogVisible = false">{{
-          $t("action.cancel")
-        }}</el-button>
+        <el-button :size="size" @click="dialogVisible = false">{{ $t("action.cancel") }}</el-button>
         <el-button :size="size" type="primary" @click="submitForm()">{{
           $t("action.comfirm")
         }}</el-button>
@@ -192,12 +162,8 @@ export default {
         orderNum: 0
       },
       dataRule: {
-        name: [
-          { required: true, message: "机构名称不能为空", trigger: "blur" }
-        ],
-        parentName: [
-          { required: true, message: "上级机构不能为空", trigger: "change" }
-        ]
+        name: [{ required: true, message: "机构名称不能为空", trigger: "blur" }],
+        parentName: [{ required: true, message: "上级机构不能为空", trigger: "change" }]
       },
       popupTreeData: [],
       popupTreeProps: {

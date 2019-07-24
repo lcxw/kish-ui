@@ -51,25 +51,14 @@
       <el-col class="line" :span="1">&nbsp;</el-col>
       <el-col :span="11">
         <el-form-item>
-          <img
-            style="width: 100%;"
-            class="pointer"
-            :src="loginForm.src"
-            @click="refreshCaptcha"
-          />
+          <img style="width: 100%;" class="pointer" :src="loginForm.src" @click="refreshCaptcha" />
         </el-form-item>
       </el-col>
     </el-form-item>
     <!-- <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox> -->
     <el-form-item style="width:100%;">
-      <el-button type="primary" style="width:48%;" @click.native.prevent="reset"
-        >重 置
-      </el-button>
-      <el-button
-        type="primary"
-        style="width:48%;"
-        @click.native.prevent="login"
-        :loading="loading"
+      <el-button type="primary" style="width:48%;" @click.native.prevent="reset">重 置 </el-button>
+      <el-button type="primary" style="width:48%;" @click.native.prevent="login" :loading="loading"
         >登 录
       </el-button>
     </el-form-item>

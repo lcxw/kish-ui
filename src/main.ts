@@ -12,6 +12,7 @@ Vue.config.productionTip = false;
 Vue.prototype.global = global;
 Vue.use(ElementUI);
 Vue.use(api);
+
 new Vue({
   i18n,
   router,

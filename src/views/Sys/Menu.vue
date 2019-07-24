@@ -36,41 +36,20 @@
       v-loading="loading"
       element-loading-text="$t('action.loading')"
     >
-      <el-table-column
-        prop="id"
-        header-align="center"
-        align="center"
-        width="80"
-        label="ID"
-      >
+      <el-table-column prop="id" header-align="center" align="center" width="80" label="ID">
       </el-table-column>
-      <table-tree-column
-        prop="name"
-        header-align="center"
-        treeKey="id"
-        width="150"
-        label="名称"
-      >
+      <table-tree-column prop="name" header-align="center" treeKey="id" width="150" label="名称">
       </table-tree-column>
       <el-table-column header-align="center" align="center" label="图标">
         <template slot-scope="scope">
           <i :class="scope.row.icon || ''"></i>
         </template>
       </el-table-column>
-      <el-table-column
-        prop="type"
-        header-align="center"
-        align="center"
-        label="类型"
-      >
+      <el-table-column prop="type" header-align="center" align="center" label="类型">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.type === 0" size="small">目录</el-tag>
-          <el-tag v-else-if="scope.row.type === 1" size="small" type="success"
-            >菜单</el-tag
-          >
-          <el-tag v-else-if="scope.row.type === 2" size="small" type="info"
-            >按钮</el-tag
-          >
+          <el-tag v-else-if="scope.row.type === 1" size="small" type="success">菜单</el-tag>
+          <el-tag v-else-if="scope.row.type === 2" size="small" type="info">按钮</el-tag>
         </template>
       </el-table-column>
       <el-table-column
@@ -99,12 +78,7 @@
         label="授权标识"
       >
       </el-table-column>
-      <el-table-column
-        prop="orderNum"
-        header-align="center"
-        align="center"
-        label="排序"
-      >
+      <el-table-column prop="orderNum" header-align="center" align="center" label="排序">
       </el-table-column>
       <el-table-column
         fixed="right"
@@ -148,12 +122,9 @@
       >
         <el-form-item label="菜单类型" prop="type">
           <el-radio-group v-model="dataForm.type">
-            <el-radio
-              v-for="(type, index) in menuTypeList"
-              :label="index"
-              :key="index"
-              >{{ type }}</el-radio
-            >
+            <el-radio v-for="(type, index) in menuTypeList" :label="index" :key="index">{{
+              type
+            }}</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item :label="menuTypeList[dataForm.type] + '名称'" prop="name">
@@ -185,22 +156,19 @@
         <el-form-item v-if="dataForm.type === 1" label="菜单路由" prop="url">
           <el-row>
             <el-col :span="22">
-              <el-input
-                v-model="dataForm.url"
-                placeholder="菜单路由"
-              ></el-input>
+              <el-input v-model="dataForm.url" placeholder="菜单路由"></el-input>
             </el-col>
             <el-col :span="2" class="icon-list__tips">
               <el-tooltip placement="top" effect="light" style="padding: 10px;">
                 <div slot="content">
                   <p>URL格式：</p>
                   <p>
-                    1.常规业务开发的功能URL，如用户管理，Views目录下页面路径为
-                    /Sys/User, 此处填写 /sys/user。
+                    1.常规业务开发的功能URL，如用户管理，Views目录下页面路径为 /Sys/User, 此处填写
+                    /sys/user。
                   </p>
                   <p>
-                    2.嵌套外部网页，如通过菜单打开百度网页，此处填写
-                    http://www.baidu.com，http:// 不可省略。
+                    2.嵌套外部网页，如通过菜单打开百度网页，此处填写 http://www.baidu.com，http://
+                    不可省略。
                   </p>
                   <p>
                     示例：用户管理：/sys/user 嵌套百度：http://www.baidu.com
@@ -212,11 +180,7 @@
             </el-col>
           </el-row>
         </el-form-item>
-        <el-form-item
-          v-if="dataForm.type !== 2"
-          label="排序编号"
-          prop="orderNum"
-        >
+        <el-form-item v-if="dataForm.type !== 2" label="排序编号" prop="orderNum">
           <el-input-number
             v-model="dataForm.orderNum"
             controls-position="right"
@@ -257,9 +221,7 @@
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button :size="size" @click="dialogVisible = false">{{
-          $t("action.cancel")
-        }}</el-button>
+        <el-button :size="size" @click="dialogVisible = false">{{ $t("action.cancel") }}</el-button>
         <el-button :size="size" type="primary" @click="submitForm()">{{
           $t("action.comfirm")
         }}</el-button>

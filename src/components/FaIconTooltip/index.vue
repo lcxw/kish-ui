@@ -5,9 +5,7 @@
       <p>使用步骤：</p>
       <p>
         1.进入
-        <a href="http://www.fontawesome.com.cn/faicons/" target="_blank"
-          >Font Aweson</a
-        >
+        <a href="http://www.fontawesome.com.cn/faicons/" target="_blank">Font Aweson</a>
         页面
       </p>
       <p>2.查找到需要的图标,点击查看。</p>

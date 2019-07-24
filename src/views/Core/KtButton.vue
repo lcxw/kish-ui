@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { hasPermission } from "@/permission/index.js";
+import { hasPermission } from "@/permission/index";
 export default {
   name: "KtButton",
   props: {

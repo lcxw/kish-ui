@@ -1,12 +1,6 @@
 <template>
   <div class="iframe-container">
-    <iframe
-      :src="src"
-      scrolling="auto"
-      frameborder="0"
-      class="frame"
-      :onload="onloaded()"
-    >
+    <iframe :src="src" scrolling="auto" frameborder="0" class="frame" :onload="onloaded()">
     </iframe>
   </div>
 </template>

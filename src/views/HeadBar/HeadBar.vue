@@ -2,9 +2,7 @@
   <div
     class="headbar"
     :style="{ background: themeColor }"
-    :class="
-      $store.state.app.collapse ? 'position-collapse-left' : 'position-left'
-    "
+    :class="$store.state.app.collapse ? 'position-collapse-left' : 'position-left'"
   >
     <!-- 导航收缩 -->
     <span class="hamburg">
@@ -34,21 +32,17 @@
         <el-menu-item index="1" @click="$router.push('/')"
           ><i class="fa fa-home fa-lg"></i>
         </el-menu-item>
-        <el-menu-item
-          index="2"
-          @click="openWindow('https://gitee.com/liuge1988/kitty')"
-          >{{ $t("common.projectRepo") }}</el-menu-item
-        >
+        <el-menu-item index="2" @click="openWindow('https://gitee.com/liuge1988/kitty')">{{
+          $t("common.projectRepo")
+        }}</el-menu-item>
         <el-menu-item
           index="3"
           @click="openWindow('https://gitee.com/liuge1988/kitty/wikis/Home')"
           >{{ $t("common.doc") }}</el-menu-item
         >
-        <el-menu-item
-          index="4"
-          @click="openWindow('https://www.cnblogs.com/xifengxiaoma/')"
-          >{{ $t("common.blog") }}</el-menu-item
-        >
+        <el-menu-item index="4" @click="openWindow('https://www.cnblogs.com/xifengxiaoma/')">{{
+          $t("common.blog")
+        }}</el-menu-item>
       </el-menu>
     </span>
     <!-- 工具栏 -->
@@ -90,11 +84,7 @@
           <el-badge :value="5" :max="99" class="badge" type="success">
             <li style="color:#fff;" class="fa fa-envelope-o fa-lg"></li>
           </el-badge>
-          <el-popover
-            ref="popover-message"
-            placement="bottom-end"
-            trigger="click"
-          >
+          <el-popover ref="popover-message" placement="bottom-end" trigger="click">
             <message-panel></message-panel>
           </el-popover>
         </el-menu-item>
@@ -103,19 +93,13 @@
           <el-badge :value="4" :max="99" class="badge" type="success">
             <li style="color:#fff;" class="fa fa-bell-o fa-lg"></li>
           </el-badge>
-          <el-popover
-            ref="popover-notice"
-            placement="bottom-end"
-            trigger="click"
-          >
+          <el-popover ref="popover-notice" placement="bottom-end" trigger="click">
             <notice-panel></notice-panel>
           </el-popover>
         </el-menu-item>
         <el-menu-item index="5" v-popover:popover-personal>
           <!-- 用户信息 -->
-          <span class="user-info"
-            ><img :src="user.avatar" />{{ user.name }}</span
-          >
+          <span class="user-info"><img :src="user.avatar" />{{ user.name }}</span>
           <el-popover
             ref="popover-personal"
             placement="bottom-end"

@@ -3,9 +3,13 @@
     <router-view></router-view>
   </div>
 </template>
-<script lang="js">
-export default {
-  name: 'App'
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+@Component({
+  components: {}
+})
+export default class App extends Vue {
+  private name: string = "App";
 }
 </script>
 <style lang="less">

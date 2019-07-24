@@ -26,24 +26,15 @@
         </el-form-item>
       </el-form>
     </div>
-    <div
-      class="toolbar"
-      style="float:right;padding-top:10px;padding-right:15px;"
-    >
+    <div class="toolbar" style="float:right;padding-top:10px;padding-right:15px;">
       <el-form :inline="true" :size="size">
         <el-form-item>
           <el-button-group>
             <el-tooltip content="刷新" placement="top">
-              <el-button
-                icon="fa fa-refresh"
-                @click="findPage(null)"
-              ></el-button>
+              <el-button icon="fa fa-refresh" @click="findPage(null)"></el-button>
             </el-tooltip>
             <el-tooltip content="列显示" placement="top">
-              <el-button
-                icon="fa fa-filter"
-                @click="displayFilterColumnsDialog"
-              ></el-button>
+              <el-button icon="fa fa-filter" @click="displayFilterColumnsDialog"></el-button>
             </el-tooltip>
             <el-tooltip content="导出" placement="top">
               <el-button icon="fa fa-file-excel-o"></el-button>
@@ -87,21 +78,13 @@
         label-position="right"
       >
         <el-form-item label="ID" prop="id" v-if="false">
-          <el-input
-            v-model="dataForm.id"
-            :disabled="true"
-            auto-complete="off"
-          ></el-input>
+          <el-input v-model="dataForm.id" :disabled="true" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="用户名" prop="name">
           <el-input v-model="dataForm.name" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input
-            v-model="dataForm.password"
-            type="password"
-            auto-complete="off"
-          ></el-input>
+          <el-input v-model="dataForm.password" type="password" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="机构" prop="deptName">
           <popup-tree-input
@@ -126,12 +109,7 @@
             placeholder="请选择"
             style="width: 100%;"
           >
-            <el-option
-              v-for="item in roles"
-              :key="item.id"
-              :label="item.remark"
-              :value="item.id"
-            >
+            <el-option v-for="item in roles" :key="item.id" :label="item.remark" :value="item.id">
             </el-option>
           </el-select>
         </el-form-item>
@@ -140,13 +118,9 @@
         <el-button :size="size" @click.native="dialogVisible = false">{{
           $t("action.cancel")
         }}</el-button>
-        <el-button
-          :size="size"
-          type="primary"
-          @click.native="submitForm"
-          :loading="editLoading"
-          >{{ $t("action.submit") }}</el-button
-        >
+        <el-button :size="size" type="primary" @click.native="submitForm" :loading="editLoading">{{
+          $t("action.submit")
+        }}</el-button>
       </div>
     </el-dialog>
   </div>
@@ -228,9 +202,7 @@ export default {
     },
     // 批量删除
     handleDelete: function(data) {
-      this.$api.user
-        .batchDelete(data.params)
-        .then(data != null ? data.callback : "");
+      this.$api.user.batchDelete(data.params).then(data != null ? data.callback : "");
     },
     // 显示新增界面
     handleAdd: function() {

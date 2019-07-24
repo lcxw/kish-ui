@@ -2,17 +2,13 @@
   <div
     id="main-container"
     class="main-container"
-    :class="
-      $store.state.app.collapse ? 'position-collapse-left' : 'position-left'
-    "
+    :class="$store.state.app.collapse ? 'position-collapse-left' : 'position-left'"
   >
     <!-- 标签页 -->
     <div class="tab-container">
       <el-tabs
         class="tabs"
-        :class="
-          $store.state.app.collapse ? 'position-collapse-left' : 'position-left'
-        "
+        :class="$store.state.app.collapse ? 'position-collapse-left' : 'position-left'"
         v-model="mainTabsActiveName"
         :closable="true"
         type="card"
@@ -24,15 +20,9 @@
             <i class="el-icon-arrow-down"></i>
           </div>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item @click.native="tabsCloseCurrentHandle"
-              >关闭当前标签</el-dropdown-item
-            >
-            <el-dropdown-item @click.native="tabsCloseOtherHandle"
-              >关闭其它标签</el-dropdown-item
-            >
-            <el-dropdown-item @click.native="tabsCloseAllHandle"
-              >关闭全部标签</el-dropdown-item
-            >
+            <el-dropdown-item @click.native="tabsCloseCurrentHandle">关闭当前标签</el-dropdown-item>
+            <el-dropdown-item @click.native="tabsCloseOtherHandle">关闭其它标签</el-dropdown-item>
+            <el-dropdown-item @click.native="tabsCloseAllHandle">关闭全部标签</el-dropdown-item>
             <el-dropdown-item @click.native="tabsRefreshCurrentHandle"
               >刷新当前标签</el-dropdown-item
             >
@@ -96,12 +86,9 @@ export default {
       if (this.mainTabs.length >= 1) {
         // 当前选中tab被删除
         if (tabName === this.mainTabsActiveName) {
-          this.$router.push(
-            { name: this.mainTabs[this.mainTabs.length - 1].name },
-            () => {
-              this.mainTabsActiveName = this.$route.name;
-            }
-          );
+          this.$router.push({ name: this.mainTabs[this.mainTabs.length - 1].name }, () => {
+            this.mainTabsActiveName = this.$route.name;
+          });
         }
       } else {
         this.$router.push("/");
@@ -113,9 +100,7 @@ export default {
     },
     // tabs, 关闭其它
     tabsCloseOtherHandle() {
-      this.mainTabs = this.mainTabs.filter(
-        item => item.name === this.mainTabsActiveName
-      );
+      this.mainTabs = this.mainTabs.filter(item => item.name === this.mainTabsActiveName);
     },
     // tabs, 关闭全部
     tabsCloseAllHandle() {

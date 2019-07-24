@@ -53,11 +53,7 @@
         :size="size"
       >
         <el-form-item label="ID" prop="id" v-if="false">
-          <el-input
-            v-model="dataForm.id"
-            :disabled="true"
-            auto-complete="off"
-          ></el-input>
+          <el-input v-model="dataForm.id" :disabled="true" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="名称" prop="label">
           <el-input v-model="dataForm.label" auto-complete="off"></el-input>
@@ -72,31 +68,19 @@
           <el-input v-model="dataForm.sort" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="描述 " prop="description">
-          <el-input
-            v-model="dataForm.description"
-            auto-complete="off"
-            type="textarea"
-          ></el-input>
+          <el-input v-model="dataForm.description" auto-complete="off" type="textarea"></el-input>
         </el-form-item>
         <el-form-item label="备注" prop="remarks">
-          <el-input
-            v-model="dataForm.remarks"
-            auto-complete="off"
-            type="textarea"
-          ></el-input>
+          <el-input v-model="dataForm.remarks" auto-complete="off" type="textarea"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button :size="size" @click.native="editDialogVisible = false">{{
           $t("action.cancel")
         }}</el-button>
-        <el-button
-          :size="size"
-          type="primary"
-          @click.native="submitForm"
-          :loading="editLoading"
-          >{{ $t("action.submit") }}</el-button
-        >
+        <el-button :size="size" type="primary" @click.native="submitForm" :loading="editLoading">{{
+          $t("action.submit")
+        }}</el-button>
       </div>
     </el-dialog>
   </div>
@@ -174,9 +158,7 @@ export default {
     },
     // 批量删除
     handleDelete: function(data) {
-      this.$api.dict
-        .batchDelete(data.params)
-        .then(data != null ? data.callback : "");
+      this.$api.dict.batchDelete(data.params).then(data != null ? data.callback : "");
     },
     // 显示新增界面
     handleAdd: function() {

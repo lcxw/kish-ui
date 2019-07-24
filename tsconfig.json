@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": "../kish-ui-typescript",
+    "baseUrl": ".",
     "types": [
       "webpack-env",
       "mocha",
@@ -36,6 +36,6 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "../kish-ui-typescript/node_modules"
+    "node_modules"
   ]
 }

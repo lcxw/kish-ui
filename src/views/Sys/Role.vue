@@ -58,34 +58,22 @@
         :size="size"
       >
         <el-form-item label="ID" prop="id" v-if="false">
-          <el-input
-            v-model="dataForm.id"
-            :disabled="true"
-            auto-complete="off"
-          ></el-input>
+          <el-input v-model="dataForm.id" :disabled="true" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="角色名" prop="name">
           <el-input v-model="dataForm.name" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="备注 " prop="remark">
-          <el-input
-            v-model="dataForm.remark"
-            auto-complete="off"
-            type="textarea"
-          ></el-input>
+          <el-input v-model="dataForm.remark" auto-complete="off" type="textarea"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button :size="size" @click.native="dialogVisible = false">{{
           $t("action.cancel")
         }}</el-button>
-        <el-button
-          :size="size"
-          type="primary"
-          @click.native="submitForm"
-          :loading="editLoading"
-          >{{ $t("action.submit") }}</el-button
-        >
+        <el-button :size="size" type="primary" @click.native="submitForm" :loading="editLoading">{{
+          $t("action.submit")
+        }}</el-button>
       </div>
     </el-dialog>
     <!--角色菜单，表格树内容栏-->
@@ -108,9 +96,7 @@
         @check-change="handleMenuCheckChange"
       >
       </el-tree>
-      <div
-        style="float:left;padding-left:24px;padding-top:12px;padding-bottom:4px;"
-      >
+      <div style="float:left;padding-left:24px;padding-top:12px;padding-bottom:4px;">
         <el-checkbox
           v-model="checkAll"
           @change="handleCheckAll"
@@ -118,9 +104,7 @@
           ><b>全选</b></el-checkbox
         >
       </div>
-      <div
-        style="float:right;padding-right:15px;padding-top:4px;padding-bottom:4px;"
-      >
+      <div style="float:right;padding-right:15px;padding-top:4px;padding-bottom:4px;">
         <kt-button
           :label="$t('action.reset')"
           perms="sys:role:edit"
@@ -351,23 +335,18 @@ export default {
         <div class="column-container">
           <span style="text-algin:center;margin-right:80px;">{data.name}</span>
           <span style="text-algin:center;margin-right:80px;">
-            <el-tag
-              type={data.type === 0 ? "" : data.type === 1 ? "success" : "info"}
-              size="small"
-            >
+            <el-tag type={data.type === 0 ? "" : data.type === 1 ? "success" : "info"} size="small">
               {data.type === 0 ? "目录" : data.type === 1 ? "菜单" : "按钮"}
             </el-tag>
           </span>
           <span style="text-algin:center;margin-right:80px;">
             {" "}
-            <i class={data.icon}></i>
+            <i class={data.icon} />
           </span>
           <span style="text-algin:center;margin-right:80px;">
             {data.parentName ? data.parentName : "顶级菜单"}
           </span>
-          <span style="text-algin:center;margin-right:80px;">
-            {data.url ? data.url : "\t"}
-          </span>
+          <span style="text-algin:center;margin-right:80px;">{data.url ? data.url : "\t"}</span>
         </div>
       );
     },

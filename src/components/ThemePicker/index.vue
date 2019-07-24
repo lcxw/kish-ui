@@ -48,14 +48,8 @@ export default {
       console.log(themeCluster, originalCluster);
       const getHandler = (variable, id) => {
         return () => {
-          const originalCluster = this.getThemeCluster(
-            ORIGINAL_THEME.replace("#", "")
-          );
-          const newStyle = this.updateStyle(
-            this[variable],
-            originalCluster,
-            themeCluster
-          );
+          const originalCluster = this.getThemeCluster(ORIGINAL_THEME.replace("#", ""));
+          const newStyle = this.updateStyle(this[variable], originalCluster, themeCluster);
 
           let styleTag = document.getElementById(id);
           if (!styleTag) {
@@ -76,22 +70,14 @@ export default {
         chalkHandler();
       }
 
-      const styles = [].slice
-        .call(document.querySelectorAll("style"))
-        .filter(style => {
-          const text = style.innerText;
-          return (
-            new RegExp(oldVal, "i").test(text) && !/Chalk Variables/.test(text)
-          );
-        });
+      const styles = [].slice.call(document.querySelectorAll("style")).filter(style => {
+        const text = style.innerText;
+        return new RegExp(oldVal, "i").test(text) && !/Chalk Variables/.test(text);
+      });
       styles.forEach(style => {
         const { innerText } = style;
         if (typeof innerText !== "string") return;
-        style.innerText = this.updateStyle(
-          innerText,
-          originalCluster,
-          themeCluster
-        );
+        style.innerText = this.updateStyle(innerText, originalCluster, themeCluster);
       });
 
       // 响应外部操作

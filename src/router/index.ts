@@ -48,8 +48,7 @@ const router = new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "../views/Intro/Intro.vue")
+      component: () => import(/* webpackChunkName: "about" */ "../views/Intro/Intro.vue")
     },
     {
       path: "/about",
@@ -57,8 +56,7 @@ const router = new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "../views/About.vue")
+      component: () => import(/* webpackChunkName: "about" */ "../views/About.vue")
     }
   ]
 });
@@ -131,9 +129,7 @@ function handleStaticComponent(router, dynamicRoutes) {
       break;
     }
   }
-  router.options.routes[0].children = router.options.routes[0].children.concat(
-    dynamicRoutes
-  );
+  router.options.routes[0].children = router.options.routes[0].children.concat(dynamicRoutes);
 }
 
 /**
@@ -179,8 +175,7 @@ function addDynamicRoutes(menuList = [], routes = []) {
       if (path) {
         // 如果是嵌套页面, 通过iframe展示
         route["path"] = path;
-        route["component"] = resolve =>
-          require([`@/views/IFrame/IFrame`], resolve);
+        route["component"] = resolve => require([`@/views/IFrame/IFrame`], resolve);
         // 存储嵌套页面路由路径和访问URL
         let url = getIFrameUrl(menuList[i].url);
         let iFrameUrl = { path: path, url: url };
@@ -192,10 +187,7 @@ function addDynamicRoutes(menuList = [], routes = []) {
           let array = menuList[i].url.split("/");
           let url = "";
           for (let i = 0; i < array.length; i++) {
-            url +=
-              array[i].substring(0, 1).toUpperCase() +
-              array[i].substring(1) +
-              "/";
+            url += array[i].substring(0, 1).toUpperCase() + array[i].substring(1) + "/";
           }
           url = url.substring(0, url.length - 1);
           route["component"] = resolve => require([`@/views/${url}`], resolve);
